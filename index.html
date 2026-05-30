@@ -257,13 +257,7 @@
         Fresh from the sea. Straight to your table.
       </p>
 
-      <!-- Scroll Indicator -->
-      <a href="#story" class="absolute bottom-10 flex flex-col items-center group cursor-pointer opacity-0" id="scrollIndicator">
-        <span data-translate="hero_scroll" class="text-[9px] uppercase tracking-[0.3em] text-slate-400 group-hover:text-amberGold transition-colors duration-300 mb-3">Scroll Down</span>
-        <div class="w-[1px] h-14 bg-gradient-to-b from-amberGold/80 to-transparent relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-full h-1/2 bg-white animate-bounce"></div>
-        </div>
-      </a>
+
 
     </div>
   </section>
@@ -535,7 +529,7 @@
       <div class="relative max-w-4xl mx-auto fading-edges-mask animate-fade-up">
         
         <!-- Reviews Grid / Flex Box -->
-        <div class="overflow-hidden relative w-full h-[280px] md:h-[220px]">
+        <div class="overflow-hidden relative w-full h-[320px] sm:h-[260px] md:h-[220px]">
           <div class="flex transition-transform duration-750 ease-in-out h-full" id="reviewsContainer">
             <!-- Dynamically populated reviews via JS -->
           </div>
@@ -1538,7 +1532,7 @@
 
         slide.innerHTML = `
           <span class="text-amberGold text-xl tracking-[0.2em] mb-4">${starsStr}</span>
-          <blockquote class="font-serif-elegant text-lg md:text-xl lg:text-2xl text-white italic max-w-3xl leading-relaxed font-light mb-6">
+          <blockquote class="font-serif-elegant text-sm sm:text-base md:text-xl lg:text-2xl text-white italic max-w-3xl leading-relaxed font-light mb-6">
             "${rev[currentLang]}"
           </blockquote>
           <cite class="text-xs uppercase tracking-[0.25em] text-slate-400 font-semibold font-sans not-italic block">
@@ -1722,8 +1716,7 @@
       heroTl.to("#heroBgImage", {scale: 1, duration: 8, ease: "power2.out"})
             .to("#heroTitleEn", {opacity: 1, y: 0, duration: 1.2, ease: "power3.out"}, "-=7")
             .to("#heroTitleAr", {opacity: 1, y: 0, duration: 1.2, ease: "power3.out"}, "-=6.2")
-            .to("#heroTagline", {opacity: 1, y: 0, duration: 1.2, ease: "power3.out"}, "-=5.4")
-            .to("#scrollIndicator", {opacity: 1, duration: 1}, "-=4.2");
+            .to("#heroTagline", {opacity: 1, y: 0, duration: 1.2, ease: "power3.out"}, "-=5.4");
 
       // Scroll Fade Ups
       gsap.utils.toArray('.animate-fade-up').forEach((el) => {
