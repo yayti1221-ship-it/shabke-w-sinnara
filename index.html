@@ -224,14 +224,25 @@
   <!-- ================= 2. HERO SECTION ================= -->
   <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
     
-    <!-- Background Image with Moody Dark Overlay -->
+    <!-- Background Video & Fallback Image with Moody Dark Overlay -->
     <div class="absolute inset-0 z-0">
+      <!-- Fallback Image for mobile low-power or slow connections -->
       <img src="https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?q=80&w=2000" 
            alt="Premium Moody Fresh Seafood" 
-           class="w-full h-full object-cover scale-105 filter brightness-50 contrast-125 saturate-50 transition-transform duration-[10000ms] ease-out select-none"
+           class="absolute inset-0 w-full h-full object-cover filter brightness-50 contrast-125 saturate-50 select-none transition-opacity duration-1000"
            id="heroBgImage">
+      
+      <!-- High-End Cinematic Background Video Loop -->
+      <video autoplay loop muted playsinline 
+             poster="https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?q=80&w=2000"
+             class="absolute inset-0 w-full h-full object-cover filter brightness-[0.35] contrast-125 saturate-50 select-none opacity-0 transition-opacity duration-1000" 
+             id="heroVideo"
+             onplay="this.classList.remove('opacity-0'); document.getElementById('heroBgImage').classList.add('opacity-0');">
+        <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27dbcca698503d5cf239d6b5e02888147d3e911&profile_id=165&oauth2_token_id=57447761" type="video/mp4">
+      </video>
+      
       <div class="absolute inset-0 bg-gradient-to-t from-[#05080C] via-[#05080C]/70 to-[#05080C]/40"></div>
-      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="absolute inset-0 bg-black/50"></div>
     </div>
 
     <!-- Hero Content -->
