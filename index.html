@@ -1554,9 +1554,11 @@
     }
 
     function updateReviewPosition() {
+      const totalReviews = REVIEWS_DATA.length;
+      const percentage = (currentReviewIndex * 100) / totalReviews;
       const transformValue = currentLang === "ar" 
-        ? `translateX(${currentReviewIndex * 100}%)` 
-        : `translateX(-${currentReviewIndex * 100}%)`;
+        ? `translateX(${percentage}%)` 
+        : `translateX(-${percentage}%)`;
       reviewsContainer.style.transform = transformValue;
     }
 
