@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shabke w Sinnara | Premium Seafood Dining - Saida, Lebanon</title>
+  <meta name="description" content="Experience the finest Mediterranean seafood at Shabke w Sinnara in Saida (Sidon). Fresh daily catches, Lebanese mezze, and a luxurious dining experience.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Playfair Display (Serif), DM Sans (Sans), Tajawal (Arabic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- GSAP & ScrollTrigger CDNs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            amberGold: '#E8A84C',
+            darkBase: '#05080C',
+            darkCard: '#0A0F16',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"DM Sans"', 'sans-serif'],
+            arabic: ['Tajawal', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style type="text/css">
+    /* Global Styles */
+    body {
+      background-color: #05080C;
+      color: #F8FAFC;
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
+    
+    /* Arabic Specific Overrides */
+    html[dir="rtl"] body {
+      font-family: "Tajawal", sans-serif;
+    }
+    
+    /* Playfair Display for Serifs */
+    .font-serif-elegant {
+      font-family: "Playfair Display", Georgia, serif;
+    }
+    
+    /* Glassmorphism Classes */
+    .glass-panel {
+      background: rgba(10, 15, 22, 0.45);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .glass-panel-hover:hover {
+      background: rgba(10, 15, 22, 0.65);
+      border-color: rgba(232, 168, 76, 0.35);
+      box-shadow: 0 10px 30px -10px rgba(232, 168, 76, 0.08);
+    }
+    
+    .glass-navbar {
+      background: rgba(5, 8, 12, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Ambient Glow Background Accents */
+    .ambient-glow {
+      position: absolute;
+      width: 50vw;
+      height: 50vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232, 168, 76, 0.035) 0%, rgba(5, 8, 12, 0) 70%);
+      pointer-events: none;
+      filter: blur(80px);
+      z-index: 1;
+    }
+
+    /* Cinematic Film Noise Overlay */
+    .film-noise {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* Smooth Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #05080C;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #E8A84C;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #f1b764;
+    }
+
+    /* Custom Fading Mask for Reviews Carousel */
+    .fading-edges-mask {
+      mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    }
+    html[dir="rtl"] .fading-edges-mask {
+      mask-image: linear-gradient(to left, transparent, black 15%, black 85%, transparent);
+      -webkit-mask-image: linear-gradient(to left, transparent, black 15%, black 85%, transparent);
+    }
+  </style>
+</head>
+<body class="relative min-h-screen text-slate-200 antialiased selection:bg-amberGold selection:text-darkBase">
+
+  <!-- Cinematic Film Noise -->
+  <div class="film-noise"></div>
+
+  <!-- Ambient Glow Elements -->
+  <div class="ambient-glow -top-[20%] -left-[10%]"></div>
+  <div class="ambient-glow top-[40%] -right-[10%]"></div>
+  <div class="ambient-glow top-[75%] -left-[10%]"></div>
+
+  <!-- ================= 1. STICKY NAVBAR ================= -->
+  <nav id="navbar" class="glass-navbar fixed top-0 left-0 w-full z-50 transition-all duration-500 py-5 px-6 lg:px-16">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- Text Logo -->
+      <a href="#home" class="flex flex-col select-none group">
+        <span class="font-serif-elegant text-xl lg:text-2xl tracking-wider font-semibold text-white transition-colors duration-300 group-hover:text-amberGold">
+          Shabke w Sinnara
+        </span>
+        <span class="text-xs font-arabic tracking-[0.2em] text-amberGold self-end -mt-1 opacity-80 font-medium">
+          شبكة و صنارة
+        </span>
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center space-x-8 xl:space-x-12 text-sm uppercase tracking-widest font-medium">
+        <a href="#home" data-translate="nav_home" class="hover:text-amberGold transition-colors duration-300 text-white font-medium">Home</a>
+        <a href="#story" data-translate="nav_story" class="hover:text-amberGold transition-colors duration-300">Our Story</a>
+        <a href="#menu" data-translate="nav_menu" class="hover:text-amberGold transition-colors duration-300">Menu</a>
+        <a href="#gallery" data-translate="nav_gallery" class="hover:text-amberGold transition-colors duration-300">Gallery</a>
+        <a href="#reviews" data-translate="nav_reviews" class="hover:text-amberGold transition-colors duration-300">Reviews</a>
+        <a href="#contact" data-translate="nav_contact" class="hover:text-amberGold transition-colors duration-300">Contact</a>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="hidden md:flex items-center space-x-6">
+        <!-- Language Switcher -->
+        <button id="langToggle" class="text-xs uppercase tracking-widest border border-white/20 hover:border-amberGold px-3 py-1.5 rounded transition-all duration-300 font-semibold text-amberGold hover:bg-amberGold/10">
+          AR
+        </button>
+        <!-- Reserve Button -->
+        <a href="#reservation" data-translate="nav_reserve" class="text-xs uppercase tracking-widest border border-amberGold text-amberGold px-6 py-3 rounded-sm transition-all duration-500 hover:bg-amberGold hover:text-darkBase hover:shadow-lg hover:shadow-amberGold/20 font-semibold">
+          Reserve a Table
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="flex items-center space-x-4 md:hidden">
+        <!-- Lang toggle mobile -->
+        <button id="langToggleMob" class="text-[10px] uppercase tracking-widest border border-white/20 hover:border-amberGold px-2.5 py-1 rounded text-amberGold">
+          AR
+        </button>
+        <button id="mobMenuOpen" class="text-white hover:text-amberGold focus:outline-none transition-colors duration-300">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Menu (Slide out from Right) -->
+  <div id="mobDrawer" class="fixed inset-0 z-50 bg-[#05080C]/95 backdrop-blur-lg transform translate-x-full transition-transform duration-500 ease-in-out">
+    <div class="flex flex-col h-full justify-between p-8">
+      
+      <div class="flex items-center justify-between">
+        <span class="font-serif-elegant text-lg tracking-wider text-amberGold font-semibold">Shabke w Sinnara</span>
+        <button id="mobMenuClose" class="text-white hover:text-amberGold focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="flex flex-col space-y-6 text-center text-xl uppercase tracking-widest font-serif-elegant my-auto">
+        <a href="#home" data-translate="nav_home" class="mob-link hover:text-amberGold py-2 transition-colors">Home</a>
+        <a href="#story" data-translate="nav_story" class="mob-link hover:text-amberGold py-2 transition-colors">Our Story</a>
+        <a href="#menu" data-translate="nav_menu" class="mob-link hover:text-amberGold py-2 transition-colors">Menu</a>
+        <a href="#gallery" data-translate="nav_gallery" class="mob-link hover:text-amberGold py-2 transition-colors">Gallery</a>
+        <a href="#reviews" data-translate="nav_reviews" class="mob-link hover:text-amberGold py-2 transition-colors">Reviews</a>
+        <a href="#contact" data-translate="nav_contact" class="mob-link hover:text-amberGold py-2 transition-colors">Contact</a>
+      </div>
+
+      <div class="flex flex-col space-y-4 items-center">
+        <a href="#reservation" data-translate="nav_reserve" class="mob-link w-full text-center text-xs uppercase tracking-widest border border-amberGold text-amberGold py-4 rounded-sm hover:bg-amberGold hover:text-darkBase transition-all duration-300 font-semibold">
+          Reserve a Table
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ================= 2. HERO SECTION ================= -->
+  <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+    
+    <!-- Background Image with Moody Dark Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?q=80&w=2000" 
+           alt="Premium Moody Seafood Kitchen" 
+           class="w-full h-full object-cover scale-105 filter brightness-50 contrast-125 saturate-50 transition-transform duration-[10000ms] ease-out select-none"
+           id="heroBgImage">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#05080C] via-[#05080C]/70 to-[#05080C]/40"></div>
+      <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center">
+      
+      <!-- Elegant Pretitle -->
+      <span class="text-xs uppercase tracking-[0.4em] text-amberGold mb-4 lg:mb-6 font-semibold animate-pulse">
+        SAIDA • LEBANON
+      </span>
+
+      <!-- Massive Bilingual Restaurant Name -->
+      <h1 class="flex flex-col items-center space-y-2 lg:space-y-4">
+        <span class="font-serif-elegant text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-extralight tracking-wide text-white leading-tight opacity-0 transform translate-y-10" id="heroTitleEn">
+          Shabke w Sinnara
+        </span>
+        <span class="font-arabic text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-normal text-amberGold opacity-0 transform translate-y-10" id="heroTitleAr">
+          شبكة و صنارة
+        </span>
+      </h1>
+
+      <!-- Elegant Tagline -->
+      <p data-translate="hero_tagline" class="text-base md:text-xl lg:text-2xl text-slate-300 font-light mt-6 lg:mt-10 tracking-widest max-w-2xl opacity-0 transform translate-y-10" id="heroTagline">
+        Fresh from the sea. Straight to your table.
+      </p>
+
+      <!-- Scroll Indicator -->
+      <a href="#story" class="absolute bottom-10 flex flex-col items-center group cursor-pointer opacity-0" id="scrollIndicator">
+        <span data-translate="hero_scroll" class="text-[9px] uppercase tracking-[0.3em] text-slate-400 group-hover:text-amberGold transition-colors duration-300 mb-3">Scroll Down</span>
+        <div class="w-[1px] h-14 bg-gradient-to-b from-amberGold/80 to-transparent relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1/2 bg-white animate-bounce"></div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- ================= 3. ABOUT / OUR STORY ================= -->
+  <section id="story" class="relative py-24 lg:py-36 px-6 lg:px-16 overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+      
+      <!-- Typography & Narrative Left -->
+      <div class="animate-fade-up">
+        <span class="text-xs uppercase tracking-[0.3em] text-amberGold font-semibold" data-translate="nav_story">OUR STORY</span>
+        
+        <h2 class="font-serif-elegant text-3xl md:text-5xl lg:text-6xl font-light text-white mt-4 mb-8 leading-tight" data-translate="story_title">
+          Roots in Sidon's ancient fishing culture.
+        </h2>
+        
+        <div class="space-y-6 text-slate-300 font-light text-sm md:text-base leading-relaxed tracking-wide">
+          <p data-translate="story_p1">
+            For generations, our family has lived in harmony with the Mediterranean. Under the soft amber glow of Lebanese dawns, we sailed the historic waters of Sidon, returning with treasures of the deep. Shabke w Sinnara brings this timeless romance straight to your culinary plate.
+          </p>
+          <p data-translate="story_p2">
+            Every catch is hand-selected at the local port by our skilled captains. Cooked with high culinary craft, our dishes are an exceptional fusion of time-honored Lebanese traditions and state-of-the-art modern gourmet styling.
+          </p>
+        </div>
+
+        <!-- 6 Minimalist Border Highlight Tags -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mt-12 text-[10px] md:text-xs uppercase tracking-widest font-semibold">
+          <div class="border border-white/5 py-4 px-3 text-center bg-white/[0.01] hover:border-amberGold/30 transition-colors duration-500 rounded-sm">
+            <span class="text-slate-300" data-translate="tag_hours">Open Daily 10AM–12AM</span>
+          </div>
+          <div class="border border-white/5 py-4 px-3 text-center bg-white/[0.01] hover:border-amberGold/30 transition-colors duration-500 rounded-sm">
+            <span class="text-slate-300" data-translate="tag_fresh">Daily Fresh Catch</span>
+          </div>
+          <div class="border border-white/5 py-4 px-3 text-center bg-white/[0.01] hover:border-amberGold/30 transition-colors duration-500 rounded-sm">
+            <span class="text-slate-300" data-translate="tag_mezze">Lebanese Mezze</span>
+          </div>
+          <div class="border border-white/5 py-4 px-3 text-center bg-white/[0.01] hover:border-amberGold/30 transition-colors duration-500 rounded-sm">
+            <span class="text-slate-300" data-translate="tag_shisha">Argile Service</span>
+          </div>
+          <div class="border border-white/5 py-4 px-3 text-center bg-white/[0.01] hover:border-amberGold/30 transition-colors duration-500 rounded-sm">
+            <span class="text-slate-300" data-translate="tag_parking">Free Parking</span>
+          </div>
+          <div class="border border-white/5 py-4 px-3 text-center bg-white/[0.01] hover:border-amberGold/30 transition-colors duration-500 rounded-sm">
+            <span class="text-slate-300" data-translate="tag_family">Family Friendly</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Parallax Image Frame Right -->
+      <div class="relative w-full aspect-[4/5] overflow-hidden rounded-sm glass-panel p-2 lg:p-3 animate-fade-up parallax-container">
+        <div class="w-full h-full overflow-hidden relative">
+          <img src="https://images.unsplash.com/photo-1516685018646-549198525c1b?q=80&w=1200" 
+               alt="Seafood cooking and heritage" 
+               class="w-full h-full object-cover scale-110 filter brightness-90 saturate-75 contrast-110 parallax-img select-none">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#05080C]/40 to-transparent pointer-events-none"></div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= 4. MENU SECTION ================= -->
+  <section id="menu" class="relative py-24 lg:py-36 bg-[#03060A] border-y border-white/[0.03] px-6 lg:px-16 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Central Headers -->
+      <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-24 animate-fade-up">
+        <span class="text-xs uppercase tracking-[0.3em] text-amberGold font-semibold" data-translate="nav_menu">CURATED MENU</span>
+        <h2 class="font-serif-elegant text-3xl md:text-5xl lg:text-6xl font-light text-white mt-4 mb-6 leading-tight" data-translate="menu_title">
+          From the Net to the Plate
+        </h2>
+        <p class="text-slate-400 font-light text-sm md:text-base tracking-widest" data-translate="menu_subtitle">
+          Taste the authentic culinary heritage of Saida, prepared with uncompromising perfection.
+        </p>
+      </div>
+
+      <!-- Minimalist Category Tabs -->
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 md:gap-x-8 text-xs md:text-sm uppercase tracking-widest font-semibold border-b border-white/5 pb-8 mb-12 select-none animate-fade-up" id="menuTabs">
+        <!-- Dynamic Category Tabs Rendered in JS -->
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 min-h-[300px]" id="menuGrid">
+        <!-- Dynamic Cards Rendered in JS -->
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= 5. WHY CHOOSE US ================= -->
+  <section class="relative py-24 lg:py-36 px-6 lg:px-16 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Left Align Headers -->
+      <div class="max-w-3xl mb-16 lg:mb-24 animate-fade-up">
+        <span class="text-xs uppercase tracking-[0.3em] text-amberGold font-semibold" data-translate="why_title">WHY SHABKE W SINNARA</span>
+        <h2 class="font-serif-elegant text-3xl md:text-5xl lg:text-6xl font-light text-white mt-4 mb-6 leading-tight" data-translate="why_subtitle">
+          Our Marine Excellence
+        </h2>
+      </div>
+
+      <!-- Minimal Typography Grid with delayed fadeup -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Feature 01 -->
+        <div class="group border-t border-white/10 pt-8 animate-fade-up">
+          <span class="font-serif-elegant text-4xl lg:text-5xl text-amberGold font-extralight tracking-widest block transition-transform duration-500 group-hover:-translate-y-2">
+            01
+          </span>
+          <h3 class="font-serif-elegant text-xl text-white mt-4 mb-3" data-translate="why_01_title">
+            Daily Fresh Catch
+          </h3>
+          <p class="text-slate-400 font-light text-sm leading-relaxed tracking-wide transition-opacity duration-500 opacity-80 group-hover:opacity-100" data-translate="why_01_desc">
+            We handpick our seafood every single morning directly from local fishermen at the historical port of Sidon.
+          </p>
+        </div>
+
+        <!-- Feature 02 -->
+        <div class="group border-t border-white/10 pt-8 animate-fade-up" style="animation-delay: 200ms;">
+          <span class="font-serif-elegant text-4xl lg:text-5xl text-amberGold font-extralight tracking-widest block transition-transform duration-500 group-hover:-translate-y-2">
+            02
+          </span>
+          <h3 class="font-serif-elegant text-xl text-white mt-4 mb-3" data-translate="why_02_title">
+            Authentic Recipes
+          </h3>
+          <p class="text-slate-400 font-light text-sm leading-relaxed tracking-wide transition-opacity duration-500 opacity-80 group-hover:opacity-100" data-translate="why_02_desc">
+            A beautiful fusion of deep Lebanese seafood secrets and sophisticated modern gourmet cooking styling.
+          </p>
+        </div>
+
+        <!-- Feature 03 -->
+        <div class="group border-t border-white/10 pt-8 animate-fade-up" style="animation-delay: 400ms;">
+          <span class="font-serif-elegant text-4xl lg:text-5xl text-amberGold font-extralight tracking-widest block transition-transform duration-500 group-hover:-translate-y-2">
+            03
+          </span>
+          <h3 class="font-serif-elegant text-xl text-white mt-4 mb-3" data-translate="why_03_title">
+            Exceptional Hygiene
+          </h3>
+          <p class="text-slate-400 font-light text-sm leading-relaxed tracking-wide transition-opacity duration-500 opacity-80 group-hover:opacity-100" data-translate="why_03_desc">
+            Uncompromising clean standards applied across kitchens, storage, and customer spaces to exceed global guidelines.
+          </p>
+        </div>
+
+        <!-- Feature 04 -->
+        <div class="group border-t border-white/10 pt-8 animate-fade-up" style="animation-delay: 600ms;">
+          <span class="font-serif-elegant text-4xl lg:text-5xl text-amberGold font-extralight tracking-widest block transition-transform duration-500 group-hover:-translate-y-2">
+            04
+          </span>
+          <h3 class="font-serif-elegant text-xl text-white mt-4 mb-3" data-translate="why_04_title">
+            Free On-Site Parking
+          </h3>
+          <p class="text-slate-400 font-light text-sm leading-relaxed tracking-wide transition-opacity duration-500 opacity-80 group-hover:opacity-100" data-translate="why_04_desc">
+            We provide our guests with full peace of mind through secure, spacious parking right in front of the dining halls.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= 6. PHOTO GALLERY ================= -->
+  <section id="gallery" class="relative py-24 lg:py-36 bg-[#03060A] border-y border-white/[0.03] px-6 lg:px-16 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Central Headers -->
+      <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-24 animate-fade-up">
+        <span class="text-xs uppercase tracking-[0.3em] text-amberGold font-semibold" data-translate="nav_gallery">VISUAL JOURNEY</span>
+        <h2 class="font-serif-elegant text-3xl md:text-5xl lg:text-6xl font-light text-white mt-4 mb-6 leading-tight" data-translate="gallery_title">
+          An Ocean of Delights
+        </h2>
+        <p class="text-slate-400 font-light text-sm md:text-base tracking-widest" data-translate="gallery_subtitle">
+          Take a look at our premium gourmet dishes, freshly crafted every single day.
+        </p>
+      </div>
+
+      <!-- Cinematic Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 select-none" id="galleryGrid">
+        <!-- Card 1 -->
+        <div class="gallery-item relative overflow-hidden rounded-sm glass-panel p-2 aspect-[4/3] cursor-pointer group animate-fade-up" data-img="https://rest.thrubits.com/uploads/restorants/db3f04f5-1c3a-4ec7-b354-0ddc39ad4095_medium.jpg" data-caption="Shrimp Fateh [Signature]">
+          <div class="w-full h-full overflow-hidden relative">
+            <img src="https://rest.thrubits.com/uploads/restorants/db3f04f5-1c3a-4ec7-b354-0ddc39ad4095_medium.jpg" alt="Shrimp Fateh" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-75 contrast-125 saturate-50 group-hover:brightness-100 group-hover:saturate-100 group-hover:contrast-100">
+            <!-- Glassy Overlay -->
+            <div class="absolute inset-0 bg-[#05080C]/40 opacity-100 group-hover:opacity-0 transition-opacity duration-500 flex items-center justify-center">
+              <span class="font-serif-elegant text-white text-lg tracking-wider border-b border-amberGold pb-1">Shrimp Fateh</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="gallery-item relative overflow-hidden rounded-sm glass-panel p-2 aspect-[4/3] cursor-pointer group animate-fade-up" data-img="https://rest.thrubits.com/uploads/restorants/df222325-ad5e-424c-9e27-270008b6b892_medium.jpg" data-caption="Salmon Wave [Signature]">
+          <div class="w-full h-full overflow-hidden relative">
+            <img src="https://rest.thrubits.com/uploads/restorants/df222325-ad5e-424c-9e27-270008b6b892_medium.jpg" alt="Salmon Wave" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-75 contrast-125 saturate-50 group-hover:brightness-100 group-hover:saturate-100 group-hover:contrast-100">
+            <div class="absolute inset-0 bg-[#05080C]/40 opacity-100 group-hover:opacity-0 transition-opacity duration-500 flex items-center justify-center">
+              <span class="font-serif-elegant text-white text-lg tracking-wider border-b border-amberGold pb-1">Salmon Wave</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="gallery-item relative overflow-hidden rounded-sm glass-panel p-2 aspect-[4/3] cursor-pointer group animate-fade-up" data-img="https://rest.thrubits.com/uploads/restorants/64445aaf-128d-49df-ab77-8d364c7b34d9_medium.jpg" data-caption="Seafood Spaghetti">
+          <div class="w-full h-full overflow-hidden relative">
+            <img src="https://rest.thrubits.com/uploads/restorants/64445aaf-128d-49df-ab77-8d364c7b34d9_medium.jpg" alt="Seafood Spaghetti" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-75 contrast-125 saturate-50 group-hover:brightness-100 group-hover:saturate-100 group-hover:contrast-100">
+            <div class="absolute inset-0 bg-[#05080C]/40 opacity-100 group-hover:opacity-0 transition-opacity duration-500 flex items-center justify-center">
+              <span class="font-serif-elegant text-white text-lg tracking-wider border-b border-amberGold pb-1">Seafood Spaghetti</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="gallery-item relative overflow-hidden rounded-sm glass-panel p-2 aspect-[4/3] cursor-pointer group animate-fade-up" data-img="https://rest.thrubits.com/uploads/restorants/e443b5b4-def4-4193-bdb2-ca91822062c5_medium.jpg" data-caption="Octopus Provençale">
+          <div class="w-full h-full overflow-hidden relative">
+            <img src="https://rest.thrubits.com/uploads/restorants/e443b5b4-def4-4193-bdb2-ca91822062c5_medium.jpg" alt="Octopus Provençale" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-75 contrast-125 saturate-50 group-hover:brightness-100 group-hover:saturate-100 group-hover:contrast-100">
+            <div class="absolute inset-0 bg-[#05080C]/40 opacity-100 group-hover:opacity-0 transition-opacity duration-500 flex items-center justify-center">
+              <span class="font-serif-elegant text-white text-lg tracking-wider border-b border-amberGold pb-1">Octopus Provençale</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="gallery-item relative overflow-hidden rounded-sm glass-panel p-2 aspect-[4/3] cursor-pointer group animate-fade-up" data-img="https://rest.thrubits.com/uploads/restorants/44062ae7-13d9-47d1-919e-cc93da94446b_medium.jpg" data-caption="Sardine Harra [Signature]">
+          <div class="w-full h-full overflow-hidden relative">
+            <img src="https://rest.thrubits.com/uploads/restorants/44062ae7-13d9-47d1-919e-cc93da94446b_medium.jpg" alt="Sardine Harra" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-75 contrast-125 saturate-50 group-hover:brightness-100 group-hover:saturate-100 group-hover:contrast-100">
+            <div class="absolute inset-0 bg-[#05080C]/40 opacity-100 group-hover:opacity-0 transition-opacity duration-500 flex items-center justify-center">
+              <span class="font-serif-elegant text-white text-lg tracking-wider border-b border-amberGold pb-1">Sardine Harra</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="gallery-item relative overflow-hidden rounded-sm glass-panel p-2 aspect-[4/3] cursor-pointer group animate-fade-up" data-img="https://rest.thrubits.com/uploads/restorants/e5fcff34-0224-477f-8e04-0607b60f1076_medium.jpg" data-caption="Signature Set Menu">
+          <div class="w-full h-full overflow-hidden relative">
+            <img src="https://rest.thrubits.com/uploads/restorants/e5fcff34-0224-477f-8e04-0607b60f1076_medium.jpg" alt="Signature Set Menu" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-75 contrast-125 saturate-50 group-hover:brightness-100 group-hover:saturate-100 group-hover:contrast-100">
+            <div class="absolute inset-0 bg-[#05080C]/40 opacity-100 group-hover:opacity-0 transition-opacity duration-500 flex items-center justify-center">
+              <span class="font-serif-elegant text-white text-lg tracking-wider border-b border-amberGold pb-1">Set Menu Formula</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subtle Link -->
+      <div class="text-center mt-12 animate-fade-up">
+        <a href="https://instagram.com/shabke.w.sinnara" target="_blank" data-translate="gallery_follow" class="text-xs uppercase tracking-[0.30em] font-semibold text-slate-400 hover:text-amberGold transition-colors duration-300">
+          Follow @shabke.w.sinnara on Instagram
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= 7. GOOGLE REVIEWS SECTION ⭐ ================= -->
+  <section id="reviews" class="relative py-24 lg:py-36 px-6 lg:px-16 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Central Headers -->
+      <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-24 animate-fade-up">
+        <span class="text-xs uppercase tracking-[0.3em] text-amberGold font-semibold" data-translate="reviews_title">GUEST EXPERIENCES</span>
+        <h2 class="font-serif-elegant text-3xl md:text-5xl lg:text-6xl font-light text-white mt-4 mb-6 leading-tight" data-translate="reviews_subtitle">
+          Loved by Locals & Travelers
+        </h2>
+      </div>
+
+      <!-- Fading edges carousel wrapper -->
+      <div class="relative max-w-4xl mx-auto fading-edges-mask animate-fade-up">
+        
+        <!-- Reviews Grid / Flex Box -->
+        <div class="overflow-hidden relative w-full h-[280px] md:h-[220px]">
+          <div class="flex transition-transform duration-750 ease-in-out h-full" id="reviewsContainer">
+            <!-- Dynamically populated reviews via JS -->
+          </div>
+        </div>
+
+        <!-- Carousel navigation buttons inside fading borders -->
+        <div class="flex items-center justify-center space-x-6 mt-8">
+          <button id="prevReview" class="w-10 h-10 flex items-center justify-center border border-white/10 hover:border-amberGold/50 text-white hover:text-amberGold rounded-full transition-all duration-300 bg-[#0A0F16]/50">
+            <svg class="w-4 h-4 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+          <div class="flex space-x-2" id="carouselDots">
+            <!-- Dots via JS -->
+          </div>
+          <button id="nextReview" class="w-10 h-10 flex items-center justify-center border border-white/10 hover:border-amberGold/50 text-white hover:text-amberGold rounded-full transition-all duration-300 bg-[#0A0F16]/50">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= 8. RESERVATION & CONTACT ================= -->
+  <section id="reservation" class="relative py-24 lg:py-36 bg-[#03060A] border-y border-white/[0.03] px-6 lg:px-16 overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+      
+      <!-- Minimalist Reservation Form Left -->
+      <div class="animate-fade-up">
+        <span class="text-xs uppercase tracking-[0.3em] text-amberGold font-semibold" data-translate="nav_reserve">RESERVE A TABLE</span>
+        <h2 class="font-serif-elegant text-3xl md:text-5xl lg:text-6xl font-light text-white mt-4 mb-4 leading-tight" data-translate="reserve_title">
+          Secure Your Table
+        </h2>
+        <p class="text-slate-400 font-light text-sm md:text-base mb-10 tracking-widest" data-translate="reserve_subtitle">
+          Join us for a stellar culinary culinary experience.
+        </p>
+
+        <!-- Dynamic Form -->
+        <form id="resForm" class="space-y-8 text-sm">
+          
+          <!-- Name Input -->
+          <div class="relative group">
+            <input type="text" id="formName" required placeholder=" " 
+                   class="peer w-full bg-transparent border-b border-white/20 py-3 text-white focus:outline-none focus:border-amberGold transition-colors duration-500 placeholder-transparent">
+            <label for="formName" data-translate="form_name" 
+                   class="absolute left-0 top-3 text-slate-400 pointer-events-none transition-all duration-500 peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-placeholder-shown:text-slate-400 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-amberGold uppercase tracking-widest font-semibold">
+              FULL NAME
+            </label>
+          </div>
+
+          <!-- Phone Input -->
+          <div class="relative group">
+            <input type="tel" id="formPhone" required placeholder=" " 
+                   class="peer w-full bg-transparent border-b border-white/20 py-3 text-white focus:outline-none focus:border-amberGold transition-colors duration-500 placeholder-transparent">
+            <label for="formPhone" data-translate="form_phone" 
+                   class="absolute left-0 top-3 text-slate-400 pointer-events-none transition-all duration-500 peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-placeholder-shown:text-slate-400 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-amberGold uppercase tracking-widest font-semibold">
+              PHONE NUMBER
+            </label>
+          </div>
+
+          <!-- Two Column Date & Time -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="relative">
+              <input type="date" id="formDate" required 
+                     class="peer w-full bg-transparent border-b border-white/20 py-3 text-white focus:outline-none focus:border-amberGold transition-colors duration-500">
+              <label for="formDate" data-translate="form_date" 
+                     class="absolute -top-4 left-0 text-xs text-amberGold uppercase tracking-widest font-semibold">
+                DATE
+              </label>
+            </div>
+            <div class="relative">
+              <input type="time" id="formTime" required 
+                     class="peer w-full bg-transparent border-b border-white/20 py-3 text-white focus:outline-none focus:border-amberGold transition-colors duration-500">
+              <label for="formTime" data-translate="form_time" 
+                     class="absolute -top-4 left-0 text-xs text-amberGold uppercase tracking-widest font-semibold">
+                TIME
+              </label>
+            </div>
+          </div>
+
+          <!-- Guests selection -->
+          <div class="relative">
+            <select id="formGuests" required 
+                    class="peer w-full bg-[#0A0F16] border border-white/20 py-3 px-4 text-white focus:outline-none focus:border-amberGold transition-colors duration-500 rounded-sm">
+              <option value="1">1 Person</option>
+              <option value="2" selected>2 People</option>
+              <option value="3">3 People</option>
+              <option value="4">4 People</option>
+              <option value="5">5 People</option>
+              <option value="6">6 People</option>
+              <option value="7">7 People</option>
+              <option value="8">8+ People</option>
+            </select>
+            <label for="formGuests" data-translate="form_guests" 
+                   class="absolute -top-4 left-0 text-xs text-amberGold uppercase tracking-widest font-semibold">
+              GUESTS
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" data-translate="form_submit" 
+                  class="w-full text-center text-xs uppercase tracking-widest border border-amberGold text-amberGold py-4 rounded-sm hover:bg-amberGold hover:text-darkBase hover:shadow-lg hover:shadow-amberGold/20 transition-all duration-500 font-semibold mt-4">
+            RESERVE A TABLE
+          </button>
+
+        </form>
+      </div>
+
+      <!-- Right Contact Info & Desaturated Map -->
+      <div class="space-y-12 animate-fade-up" id="contact">
+        <div>
+          <span class="text-xs uppercase tracking-[0.3em] text-amberGold font-semibold" data-translate="contact_info">CONTACT DETAILS</span>
+          <h2 class="font-serif-elegant text-3xl md:text-4xl font-light text-white mt-4 mb-8 leading-tight">
+            Shabke w Sinnara
+          </h2>
+          
+          <div class="space-y-6 text-sm font-light tracking-widest uppercase">
+            <!-- Phone -->
+            <div class="flex items-center space-x-4">
+              <span class="text-amberGold text-xs font-semibold" data-translate="contact_phone">PHONE:</span>
+              <a href="tel:+96171993444" class="text-white hover:text-amberGold transition-colors font-semibold">+961 71 993 444</a>
+            </div>
+            <!-- WhatsApp -->
+            <div class="flex items-center space-x-4">
+              <span class="text-amberGold text-xs font-semibold" data-translate="contact_whatsapp">WHATSAPP:</span>
+              <a href="https://wa.me/96171993444" target="_blank" class="text-white hover:text-amberGold transition-colors font-semibold">CHAT ON WHATSAPP</a>
+            </div>
+            <!-- Hours -->
+            <div class="flex items-center space-x-4">
+              <span class="text-amberGold text-xs font-semibold" data-translate="contact_hours">HOURS:</span>
+              <span class="text-white font-medium" data-translate="tag_hours">DAILY 10:00 AM – 12:00 AM</span>
+            </div>
+            <!-- Address -->
+            <div class="flex items-center space-x-4">
+              <span class="text-amberGold text-xs font-semibold" data-translate="contact_address">ADDRESS:</span>
+              <span class="text-white font-medium" data-translate="address_desc">SEASIDE CORNICHE, SAIDA, LEBANON</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Map Iframe Desaturated in Glass Frame -->
+        <div class="glass-panel p-2 rounded-sm aspect-video w-full overflow-hidden grayscale contrast-125 filter invert opacity-80 hover:opacity-100 hover:grayscale-0 hover:invert-0 transition-all duration-[800ms] border border-white/10">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.5435940027725!2d35.37025807632616!3d33.565251843310065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ee12db61cf865%3A0xe510b656b27e1f40!2sShabke%20w%20Sinnara!5e0!3m2!1sen!2slb!4v1716769000000!5m2!1sen!2slb" 
+            class="w-full h-full border-0 rounded-sm" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= 9. FOOTER ================= -->
+  <footer class="relative py-12 px-6 lg:px-16 border-t border-white/5 bg-[#05080C] text-slate-500 text-xs font-light tracking-widest text-center">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+      
+      <!-- Minimalist Logo -->
+      <div class="flex flex-col items-center md:items-start group">
+        <span class="font-serif-elegant text-white text-lg tracking-wider font-semibold">Shabke w Sinnara</span>
+        <span class="text-[9px] text-amberGold tracking-[0.2em] font-medium font-arabic mt-0.5">شبكة و صنارة</span>
+      </div>
+
+      <!-- Social Links & Rights -->
+      <div class="flex flex-col items-center space-y-4">
+        <div class="flex items-center space-x-6 text-white text-sm">
+          <a href="tel:+96171993444" class="hover:text-amberGold transition-colors duration-300">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+          </a>
+          <a href="https://wa.me/96171993444" target="_blank" class="hover:text-amberGold transition-colors duration-300">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.012 2c-5.506 0-9.988 4.475-9.988 9.977 0 1.764.46 3.42 1.262 4.869L2 22l5.318-1.393c1.408.766 3.012 1.205 4.717 1.205 5.508 0 9.99-4.475 9.99-9.977C22.025 6.475 17.52 2 12.012 2zm5.727 14.183c-.234.654-1.173 1.218-1.615 1.272-.418.051-.963.093-1.636-.122-.44-.14-1.002-.34-1.67-.617-2.827-1.173-4.66-4.041-4.801-4.227-.14-.188-1.144-1.522-1.144-2.907 0-1.385.722-2.063.978-2.333.255-.27.558-.337.744-.337.186 0 .373.003.535.011.17.008.397-.064.62.483.234.571.791 1.928.861 2.068.07.14.116.303.023.49-.093.187-.14.303-.28.465-.138.163-.293.364-.418.49-.14.139-.286.29-.123.57.163.28.723 1.192 1.55 1.928.809.721 1.488.943 1.767 1.059.278.116.44.093.604-.093.163-.186.7-.814.884-1.093.185-.279.37-.233.626-.14.256.094 1.628.768 1.908.907.278.14.464.21.534.326.07.116.07.675-.164 1.33z"/>
+            </svg>
+          </a>
+          <a href="https://instagram.com/shabke.w.sinnara" target="_blank" class="hover:text-amberGold transition-colors duration-300">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+          </a>
+        </div>
+        <p data-translate="footer_rights" class="uppercase tracking-widest text-[9px]">
+          &copy; 2026 Shabke w Sinnara. All Rights Reserved. Crafted with Culinary Passion.
+        </p>
+      </div>
+
+      <!-- Dynamic Back to Top Button -->
+      <a href="#home" class="w-8 h-8 flex items-center justify-center border border-white/10 hover:border-amberGold/50 rounded-full transition-all duration-300 text-white hover:text-amberGold bg-[#0A0F16]/50">
+        <svg class="w-3.5 h-3.5 transform -rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
+
+    </div>
+  </footer>
+
+
+  <!-- ================= 10. CUSTOM LIGHTBOX DIALOG ================= -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-md items-center justify-center p-4">
+    <!-- Close -->
+    <button id="lightboxClose" class="absolute top-6 right-6 text-white hover:text-amberGold transition-colors z-50">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <!-- Navigation Prev -->
+    <button id="lightboxPrev" class="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 text-white hover:text-amberGold transition-colors z-50">
+      <svg class="w-8 h-8 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </button>
+
+    <!-- Content Card -->
+    <div class="relative max-w-4xl max-h-[85vh] flex flex-col items-center">
+      <img id="lightboxImage" src="" alt="" class="max-w-full max-h-[75vh] object-contain rounded-sm shadow-2xl border border-white/10 select-none">
+      <p id="lightboxCaption" class="mt-4 font-serif-elegant text-white text-lg lg:text-xl tracking-widest text-center"></p>
+    </div>
+
+    <!-- Navigation Next -->
+    <button id="lightboxNext" class="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 text-white hover:text-amberGold transition-colors z-50">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </button>
+  </div>
+
+
+  <!-- ================= 11. CUSTOM SUCCESS DIALOG ================= -->
+  <div id="successModal" class="fixed inset-0 z-50 hidden bg-[#05080C]/80 backdrop-blur-md items-center justify-center p-4">
+    <div class="glass-panel max-w-md w-full p-8 rounded-sm text-center relative overflow-hidden shadow-2xl">
+      <!-- Animated Gold Border Ring -->
+      <div class="absolute -top-10 -right-10 w-24 h-24 bg-amberGold/10 rounded-full blur-xl"></div>
+      
+      <!-- Check Mark Icon -->
+      <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full border border-amberGold/50 text-amberGold bg-amberGold/5 animate-pulse">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+
+      <h3 id="modalTitle" class="font-serif-elegant text-2xl text-white mb-3" data-translate="form_success_title">Reservation Submitted</h3>
+      <p id="modalDesc" class="text-slate-400 font-light text-sm mb-6 leading-relaxed" data-translate="form_success_desc">
+        We have compiled your reservation details. Opening WhatsApp to complete your confirmation request directly with our hosts.
+      </p>
+
+      <button id="successClose" class="w-full text-xs uppercase tracking-widest bg-amberGold text-darkBase py-3.5 rounded-sm hover:bg-amberGold/90 transition-colors duration-300 font-semibold" data-translate="form_close">
+        CLOSE WINDOW
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ============================================== -->
+  <!-- ============ SCRIPTS & DATA ENGINE ============ -->
+  <!-- ============================================== -->
+  <script>
+    // ------------------------------------------------
+    // A. CENTRAL CONFIG
+    // ------------------------------------------------
+    const CONFIG = {
+      phone: "+961 71 993 444",
+      whatsappBase: "https://wa.me/96171993444",
+      instagram: "https://instagram.com/shabke.w.sinnara",
+    };
+
+    // ------------------------------------------------
+    // B. TRANSLATION DICTIONARY
+    // ------------------------------------------------
+    const LANG_DATA = {
+      en: {
+        nav_home: "Home",
+        nav_story: "Our Story",
+        nav_menu: "Menu",
+        nav_gallery: "Gallery",
+        nav_reviews: "Reviews",
+        nav_contact: "Contact",
+        nav_reserve: "Reserve a Table",
+        hero_tagline: "Fresh from the sea. Straight to your table.",
+        hero_scroll: "Scroll Down",
+        story_title: "Roots in Sidon's ancient fishing culture.",
+        story_p1: "For generations, our family has lived in harmony with the Mediterranean. Under the soft amber glow of Lebanese dawns, we sailed the historic waters of Sidon, returning with treasures of the deep. Shabke w Sinnara brings this timeless romance straight to your culinary plate.",
+        story_p2: "Every catch is hand-selected at the local port by our skilled captains. Cooked with high culinary craft, our dishes are an exceptional fusion of time-honored Lebanese traditions and state-of-the-art modern gourmet styling.",
+        tag_hours: "Open Daily 10AM–12AM",
+        tag_fresh: "Daily Fresh Catch",
+        tag_mezze: "Lebanese Mezze",
+        tag_shisha: "Argile Service",
+        tag_parking: "Free Parking",
+        tag_family: "Family Friendly",
+        menu_title: "From the Net to the Plate",
+        menu_subtitle: "Taste the authentic culinary heritage of Saida, prepared with uncompromising perfection.",
+        why_title: "WHY SHABKE W SINNARA",
+        why_subtitle: "Our Marine Excellence",
+        why_01_title: "Daily Fresh Catch",
+        why_01_desc: "We handpick our seafood every single morning directly from local fishermen at the historical port of Sidon.",
+        why_02_title: "Authentic Recipes",
+        why_02_desc: "A beautiful fusion of deep Lebanese seafood secrets and sophisticated modern gourmet cooking styling.",
+        why_03_title: "Exceptional Hygiene",
+        why_03_desc: "Uncompromising clean standards applied across kitchens, storage, and customer spaces to exceed global guidelines.",
+        why_04_title: "Free On-Site Parking",
+        why_04_desc: "We provide our guests with full peace of mind through secure, spacious parking right in front of the dining halls.",
+        gallery_title: "An Ocean of Delights",
+        gallery_subtitle: "Take a look at our premium gourmet dishes, freshly crafted every single day.",
+        gallery_follow: "Follow @shabke.w.sinnara on Instagram",
+        reviews_title: "GUEST EXPERIENCES",
+        reviews_subtitle: "Loved by Locals & Travelers",
+        reserve_title: "Secure Your Table",
+        reserve_subtitle: "Join us for a stellar culinary experience.",
+        form_name: "FULL NAME",
+        form_phone: "PHONE NUMBER",
+        form_date: "DATE",
+        form_time: "TIME",
+        form_guests: "GUESTS",
+        form_submit: "RESERVE A TABLE",
+        form_success_title: "Reservation Submitted",
+        form_success_desc: "We have compiled your reservation details. Opening WhatsApp to complete your confirmation request directly with our hosts.",
+        form_close: "CLOSE WINDOW",
+        contact_info: "CONTACT DETAILS",
+        contact_phone: "PHONE:",
+        contact_whatsapp: "WHATSAPP:",
+        contact_hours: "HOURS:",
+        contact_address: "ADDRESS:",
+        address_desc: "SEASIDE CORNICHE, SAIDA, LEBANON",
+        footer_rights: "© 2026 Shabke w Sinnara. All Rights Reserved. Crafted with Culinary Passion.",
+        category_salads: "Salads",
+        category_cold: "Cold Appetizers",
+        category_hot: "Hot Appetizers",
+        category_plates: "Plates",
+        category_pasta: "Pasta",
+        category_mexican: "Mexican",
+        category_set: "Set Menu",
+        category_drinks: "Drinks",
+        category_shisha: "Shisha"
+      },
+      ar: {
+        nav_home: "الرئيسية",
+        nav_story: "حكايتنا",
+        nav_menu: "القائمة",
+        nav_gallery: "المعرض",
+        nav_reviews: "الآراء",
+        nav_contact: "اتصل بنا",
+        nav_reserve: "احجز طاولة",
+        hero_tagline: "طازج من البحر. مباشرة إلى طاولتك.",
+        hero_scroll: "اسحب للأسفل",
+        story_title: "جذور عميقة في مياه صيدا التاريخية.",
+        story_p1: "على مدى أجيال، عاشت عائلتنا في وئام تام مع البحر الأبيض المتوسط. تحت وهج الفجر اللبناني الذهبي، أبحقنا في مياه صيدا التاريخية، لنعود بكنوز الأعماق. شبكة وصنارة يقدم هذا الشغف التاريخي العريق في طبقكم مباشرة.",
+        story_p2: "كل صيد يتم اختياره يدوياً بعناية فائقة من الميناء المحلي بواسطة قادتنا المهرة. أطباقنا محضرة بحرفية طهي عالية، لتشكل مزيجاً استثنائياً بين التقاليد اللبنانية العريقة والأسلوب العصري الفاخر.",
+        tag_hours: "مفتوح يومياً ١٠ صباحاً – ١٢ منتصف الليل",
+        tag_fresh: "صيد البحر طازج يومياً",
+        tag_mezze: "مازة لبنانية عريقة",
+        tag_shisha: "خدمة أركيلة مميزة",
+        tag_parking: "موقف سيارات مجاني",
+        tag_family: "مناسب للعائلات",
+        menu_title: "من الشبكة إلى الطبق",
+        menu_subtitle: "تذوق النكهات البحرية الأصيلة لمدينة صيدا، المحضرة بإتقان فريد لا مساومة فيه.",
+        why_title: "لماذا شبكة وصنارة",
+        why_subtitle: "امتيازنا البحري العريق",
+        why_01_title: "صيد طازج يومياً",
+        why_01_desc: "نختار أسماكنا يدوياً كل صباح مباشرة من الصيادين المحليين في مرفأ صيدا التاريخي لضمان نضارة فائقة.",
+        why_02_title: "وصفات أصيلة",
+        why_02_desc: "توليفة مميزة تجمع بين أسرار المطبخ اللبناني التقليدي واللمسات المعاصرة التي تبرز غنى النكهات البحرية.",
+        why_03_title: "نظافة استثنائية",
+        why_03_desc: "نطبق معايير صارمة للغاية في مطابخنا لضمان تقديم تجربة طعام آمنة وراقية تفوق التوقعات.",
+        why_04_title: "موقف سيارات مجاني",
+        why_04_desc: "نوفر لكم راحة بال كاملة ومساحة مخصصة وآمنة لسياراتكم طوال فترة زيارتكم لنا.",
+        gallery_title: "بحرٌ من المذاقات",
+        gallery_subtitle: "ألقِ نظرة على أطباقنا الفاخرة المبتكرة والمصنوعة يدوياً بلمسات جمالية مذهلة.",
+        gallery_follow: "تابعونا على إنستغرام @shabke.w.sinnara",
+        reviews_title: "تجارب ضيوفنا",
+        reviews_subtitle: "نال ثقة وإعجاب الجميع",
+        reserve_title: "احجز طاولة الآن",
+        reserve_subtitle: "انضم إلينا في تجربة طهي بحرية فاخرة.",
+        form_name: "الاسم الكامل",
+        form_phone: "رقم الهاتف",
+        form_date: "التاريخ",
+        form_time: "الوقت",
+        form_guests: "عدد الضيوف",
+        form_submit: "احجز طاولة",
+        form_success_title: "تم تقديم طلب الحجز",
+        form_success_desc: "قمنا بجمع تفاصيل حجزك. سيتم فتح تطبيق واتساب الآن لإرسال تفاصيل التأكيد مباشرة إلى المضيفين.",
+        form_close: "إغلاق النافذة",
+        contact_info: "تفاصيل الاتصال",
+        contact_phone: "الهاتف:",
+        contact_whatsapp: "واتساب:",
+        contact_hours: "الساعات:",
+        contact_address: "العنوان:",
+        address_desc: "صيدا، الكورنيش البحري، لبنان",
+        footer_rights: "© ٢٠٢٦ شبكة وصنارة. جميع الحقوق محفوظة. صُنع بشغف بحري فاخر.",
+        category_salads: "سلطات",
+        category_cold: "مقبلات باردة",
+        category_hot: "مقبلات ساخنة",
+        category_plates: "أطباق رئيسية",
+        category_pasta: "باستا",
+        category_mexican: "مكسيكي",
+        category_set: "صيغة المجموعات",
+        category_drinks: "مشروبات",
+        category_shisha: "أركيلة"
+      }
+    };
+
+    // ------------------------------------------------
+    // C. COMPREHENSIVE MENU DATA
+    // ------------------------------------------------
+    const MENU_DATA = {
+      salads: [
+        {
+          price: "$6.50",
+          img: "https://rest.thrubits.com/uploads/restorants/0fb14431-2f89-4303-902f-959f296b2872_medium.jpg",
+          en: { name: "Tabouleh", desc: "Fine traditional Lebanese parsley salad" },
+          ar: { name: "تبولة", desc: "سلطة البقدونس التقليدية المفرومة ناعماً مع الطماطم والبرغل" }
+        },
+        {
+          price: "$6.50",
+          img: "https://rest.thrubits.com/uploads/restorants/8dddf135-70f8-4aef-bfd1-6be05840111b_medium.jpg",
+          en: { name: "Fatouche", desc: "Lebanese mixed greens salad with crunchy fried bread" },
+          ar: { name: "فتوش", desc: "خضار مشكلة طازجة مع الخبز المقرمش ودبس الرمان" }
+        },
+        {
+          price: "$12.00",
+          img: "https://rest.thrubits.com/uploads/restorants/00403b53-06c0-49ba-a5ed-cddeac5f3383_medium.jpg",
+          en: { name: "Rocca Salad", desc: "Rocca, red onions, mushrooms, pomegranate, cherry tomatoes, balsamic dressing, parmigiano" },
+          ar: { name: "سلطة روكا", desc: "جرجير (روكا)، بصل أحمر، فطر طازج، رمان، طماطم كرزية، صلصة البلسمك والبارميزان" }
+        },
+        {
+          price: "$18.50",
+          img: "https://rest.thrubits.com/uploads/restorants/25e17f64-7ef5-4242-b4fe-b3d0d9ccddae_medium.jpg",
+          en: { name: "Crab Salad", desc: "Crab sticks, avocado, strawberries, mango, pickled ginger, pomegranate, mixed nuts, Japanese dressing" },
+          ar: { name: "سلطة كابوريا", desc: "أصابع الكابوريا، أفوكادو، فراولة، مانجو، زنجبيل مخلل، رمان، مكسرات وبلسمك ياباني" }
+        },
+        {
+          price: "$15.00",
+          img: "https://rest.thrubits.com/uploads/restorants/4850ec37-e8d6-48dd-88fd-a78c3bde92cd_medium.jpg",
+          en: { name: "Shrimp Caesar Salad", desc: "Grilled shrimps, mixed lettuce, baguette croutons, special Caesar dressing, parmigiano reggiano" },
+          ar: { name: "سلطة سيزر بالروبيان", desc: "روبيان مشوي، خس مشكل، قطع خبز محمص، صلصة سيزر خاصة بالبارميزان" }
+        },
+        {
+          price: "$8.00",
+          img: "",
+          en: { name: "Muhammara", desc: "Roasted red pepper & walnut dip, pomegranate molasses, pine nuts" },
+          ar: { name: "محمرة", desc: "غموس الفلفل الأحمر المشوي والجوز مع دبس الرمان الفاخر والصنوبر" }
+        }
+      ],
+      cold: [
+        {
+          price: "$5.50",
+          img: "https://rest.thrubits.com/uploads/restorants/c809a1e7-79ba-43d0-9aa6-fc23d6c1681d_medium.jpg",
+          en: { name: "Hummus", desc: "Creamy pureed chickpeas with tahini and virgin olive oil" },
+          ar: { name: "حمص", desc: "حمص ناعم ومهروس على الطريقة اللبنانية مع الطحينة وزيت الزيتون البكر" }
+        },
+        {
+          price: "$5.50",
+          img: "https://rest.thrubits.com/uploads/restorants/321e1e2d-cb3d-4653-8965-e2aa93d4bfc6_medium.jpg",
+          en: { name: "Moutabal", desc: "Smoked eggplant dip with tahini and lemon juice" },
+          ar: { name: "متبل باذنجان", desc: "باذنجان مشوي مهروس مع الطحينة، الليمون الحامض وزيت الزيتون" }
+        },
+        {
+          price: "$6.00",
+          img: "",
+          en: { name: "Shakshoke", desc: "Roasted sweet bell pepper and rich tomato stew" },
+          ar: { name: "شكشوكة", desc: "يخنة الفلفل الحلو والطماطم المحمرة بنكهات بحرية أصيلة" }
+        },
+        {
+          price: "$6.50",
+          img: "",
+          en: { name: "Tajen Harra", desc: "Spicy Lebanese baked fish dip with rich sesame paste" },
+          ar: { name: "طاجن حار", desc: "سمك مطبوخ بخلطة التوابل الحارة مع صلصة الطحينة والمكسرات" }
+        },
+        {
+          price: "$5.50",
+          img: "https://rest.thrubits.com/uploads/restorants/25838549-e697-4289-9875-cf6bcd4516b9_medium.jpg",
+          en: { name: "Tajen", desc: "Traditional slow-cooked sesame and fish mixture" },
+          ar: { name: "طاجن بارد", desc: "طاجن السمك المطهو ببطء مع السمسم والمكسرات المحمصة" }
+        },
+        {
+          price: "$6.00",
+          img: "",
+          en: { name: "Raheb", desc: "Smoky roasted eggplant with tomatoes, peppers, olive oil" },
+          ar: { name: "سلطة الراهب", desc: "باذنجان مشوي مدخن بالكامل مع الطماطم الطازجة، الفلفل وزيت الزيتون" }
+        },
+        {
+          price: "$10.00",
+          signature: true,
+          img: "https://rest.thrubits.com/uploads/restorants/db3f04f5-1c3a-4ec7-b354-0ddc39ad4095_medium.jpg",
+          en: { name: "Shrimp Fateh", desc: "Fried eggplant, fried bread cubes, Lebanese yogurt, buttery shrimps, nuts & pomegranate" },
+          ar: { name: "فتة روبيان", desc: "باذنجان مقلي، مكعبات خبز محمص، لبن زبادي لبناني، روبيان بالزبدة ومكسرات ورمان" }
+        },
+        {
+          price: "$14.00",
+          signature: true,
+          img: "https://rest.thrubits.com/uploads/restorants/3d36d13d-016f-4f5e-9607-5fdc5b4c9595_medium.jpg",
+          en: { name: "Signature Shrimp Hummus", desc: "Homemade pesto hummus topped with buttery sautéed shrimps" },
+          ar: { name: "حمص بالروبيان المميز", desc: "حمص بيستو محضر منزلياً يعلوه حبات الروبيان الطرية السوتيه بالزبدة" }
+        },
+        {
+          price: "$6.50",
+          img: "https://rest.thrubits.com/uploads/restorants/25838549-e697-4289-9875-cf6bcd4516b9_medium.jpg",
+          en: { name: "Warak Enab", desc: "Spiced rice rolled in tender grape leaves" },
+          ar: { name: "ورق عنب بالزيت", desc: "أوراق عنب ملفوفة يدوياً ومحشوة بالأرز المتبل والطماطم والبقدونس" }
+        }
+      ],
+      hot: [
+        {
+          price: "$6.50",
+          img: "https://rest.thrubits.com/uploads/restorants/a49b7399-648c-4d85-96df-ea03d4e48252_medium.jpg",
+          en: { name: "Batata Harra", desc: "Spicy garlic and coriander cubed potatoes fried golden" },
+          ar: { name: "بطاطا حرة", desc: "مكعبات بطاطا مقلية ومقرمشة مع الثوم، الكزبرة الخضراء والفلفل الحار" }
+        },
+        {
+          price: "$5.50",
+          img: "https://rest.thrubits.com/uploads/restorants/9b492c07-2b47-4751-bd4e-bfacc5f337e1_medium.jpg",
+          en: { name: "Fried Cauliflower", desc: "Crispy fried cauliflower served with tarator sesame dip" },
+          ar: { name: "قرنبيط مقلي", desc: "زهيرات القرنبيط المقلية والمقرمشة تقدم مع صلصة الطحينة" }
+        },
+        {
+          price: "$5.50",
+          img: "https://rest.thrubits.com/uploads/restorants/77fe953f-3e45-464a-8fc9-91ac87e43dcd_medium.jpg",
+          en: { name: "Fried Eggplant", desc: "Crispy dark-fried eggplant slices with a touch of pomegranate" },
+          ar: { name: "باذنجان مقلي", desc: "شرائح الباذنجان المقلية بعناية فائقة مع لمسة من دبس الرمان" }
+        },
+        {
+          price: "$5.50",
+          img: "https://rest.thrubits.com/uploads/restorants/c8a4e840-5fdf-4bb4-b25d-fa037e288aa5_medium.jpg",
+          en: { name: "Fries", desc: "Golden hand-cut french fries" },
+          ar: { name: "بطاطا مقلية", desc: "بطاطا مقرمشة ذهبية ومملحة بعناية" }
+        },
+        {
+          price: "$6.75",
+          img: "https://rest.thrubits.com/uploads/restorants/d5853bc51-2930-42b9-b5bc-57044481a28f_medium.jpg",
+          en: { name: "Cheese Rolls", desc: "Crispy golden pastry rolls stuffed with melting Lebanese cheeses" },
+          ar: { name: "رقاقات جبنة", desc: "لفائف مقرمشة محشوة بتوليفة غنية من الأجبان اللبنانية الذائبة" }
+        },
+        {
+          price: "$9.00",
+          img: "https://rest.thrubits.com/uploads/restorants/1c736d93-34bc-4a77-a279-aa55599911b2_medium.jpg",
+          en: { name: "Dynamite Shrimps", desc: "Battered crispy shrimps tossed in a premium zesty spicy sauce" },
+          ar: { name: "دايناميت روبيان", desc: "روبيان مقلي مقرمش مغموس بصلصة الدايناميت الحارة والزكية" }
+        },
+        {
+          price: "$10.00",
+          img: "",
+          en: { name: "Shrimps Provençal", desc: "Sautéed shrimps with fresh garlic, coriander, lemon, and white reduction" },
+          ar: { name: "روبيان بروفنسال", desc: "روبيان مطبوخ مع الثوم الطازج، الكزبرة الخضراء وعصير الليمون المنعش" }
+        },
+        {
+          price: "$16.00",
+          signature: true,
+          img: "https://rest.thrubits.com/uploads/restorants/44062ae7-13d9-47d1-919e-cc93da94446b_medium.jpg",
+          en: { name: "Sardine Harra", desc: "Local fresh sardines baked in a spicy chili-tomato herb rub" },
+          ar: { name: "سردين حار", desc: "سردين محلي طازج مطهو بالفرن بصلصة الطماطم والأعشاب الحارة المميزة" }
+        },
+        {
+          price: "$9.50",
+          img: "https://rest.thrubits.com/uploads/restorants/7e7347f4-b39d-4ff3-ae30-42a3082781fc_medium.jpg",
+          en: { name: "Shrimps Pané", desc: "Breaded golden shrimps served with a rich dipping tartar sauce" },
+          ar: { name: "روبيان بانيه", desc: "حبات روبيان مغطاة بالبقسماط ومقلية للون الذهبي مع صلصة التارتار" }
+        },
+        {
+          price: "$16.50",
+          img: "https://rest.thrubits.com/uploads/restorants/e443b5b4-def4-4193-bdb2-ca91822062c5_medium.jpg",
+          en: { name: "Octopus Provençale", desc: "Tender octopus sautéed in pure garlic, fresh coriander, and lemon sauce" },
+          ar: { name: "أخطبوط بروفنسال", desc: "أخطبوط طري سوتيه بالثوم، الكزبرة، عصير الليمون وزيت الزيتون" }
+        },
+        {
+          price: "$8.50",
+          img: "https://rest.thrubits.com/uploads/restorants/36a36bbe-7cd4-4fd0-bd61-93cb2f889caa_medium.jpg",
+          en: { name: "Calamari Pané", desc: "Golden fried breaded calamari rings" },
+          ar: { name: "كلماري بانيه", desc: "حلقات الكلماري الذهبية المقلية المقرمشة تقدم مع ليمون حامض" }
+        },
+        {
+          price: "$7.50",
+          img: "",
+          en: { name: "Calamari Provençal", desc: "Calamari sautéed in rich garlic and coriander dressing" },
+          ar: { name: "كلماري بروفنسال", desc: "كلماري سوتيه غني بنكهة الثوم المقلي والكزبرة الخضراء الطازجة" }
+        },
+        {
+          price: "$14.00",
+          img: "https://rest.thrubits.com/uploads/restorants/f5f4f5ad-0251-439b-b5d0-6fa84a71d9f6_medium.jpg",
+          en: { name: "Sardine", desc: "Deep fried crispy local sardines" },
+          ar: { name: "سردين مقلي", desc: "أسماك السردين المحلية المقلية والمقرمشة بالكامل تقدم ساخنة" }
+        },
+        {
+          price: "$8.00",
+          img: "",
+          en: { name: "Shrimp Tempura", desc: "5 crispy golden tempura battered shrimps with sweet chili sauce" },
+          ar: { name: "روبيان تمبورا", desc: "٥ حبات من الروبيان المقرمش المحضر بخلطة التمبورا مع صلصة تشيلي حلوة" }
+        },
+        {
+          price: "$9.00",
+          img: "https://rest.thrubits.com/uploads/restorants/bdc0edf4-fea0-4fd7-a357-7e43ced97bb4_medium.jpg",
+          en: { name: "Seashells", desc: "Oven-baked local seashells stuffed with premium cheese herb blend" },
+          ar: { name: "صدف بحري", desc: "أصداف بحرية محلية مطهوة بالفرن ومحشوة بخلطة الأعشاب والأجبان المميزة" }
+        },
+        {
+          price: "$6.00",
+          img: "",
+          en: { name: "Mozzarella Sticks", desc: "Panko breaded mozzarella sticks served with zesty cocktail sauce" },
+          ar: { name: "أصابع موزاريلا", desc: "أصابع الموزاريلا المقرمشة بالبانكو والمحمرة تقدم مع صلصة كوكتيل" }
+        },
+        {
+          price: "$30.00",
+          img: "https://rest.thrubits.com/uploads/restorants/30ca431a-b460-4049-81e3-7cedfc96fa50_medium.jpg",
+          en: { name: "Moul's Pot", desc: "500g premium steamed mussels with fresh herbs and zesty tartar sauce" },
+          ar: { name: "قدر بلح البحر", desc: "٥٠٠ غرام من بلح البحر المطهو على البخار مع صلصة التارتار الفاخرة" }
+        },
+        {
+          price: "$25.00",
+          img: "https://rest.thrubits.com/uploads/restorants/54e6125e-a747-4247-a256-0b4413f40a68_medium.jpg",
+          en: { name: "Samkeh Rimaniyeh", desc: "Fish cubes simmered in our special pomegranate butter reduction sauce" },
+          ar: { name: "سمكة رمانية", desc: "مكعبات سمك مطبوخة بصلصة زبدة الرمان الفاخرة المبتكرة لدينا" }
+        },
+        {
+          price: "$14.00",
+          img: "https://rest.thrubits.com/uploads/restorants/651c9e6f-fd7e-4678-b85f-a7e1ab287c55_medium.jpg",
+          en: { name: "Kebbet Samak", desc: "Classic Lebanese fish kibbeh baked to golden perfection" },
+          ar: { name: "كبة سمك", desc: "أقراص كبة السمك اللبنانية التقليدية المقلية والمقرمشة تعلوها المكسرات" }
+        }
+      ],
+      plates: [
+        {
+          price: "$20.00",
+          signature: true,
+          img: "https://rest.thrubits.com/uploads/restorants/df222325-ad5e-424c-9e27-270008b6b892_medium.jpg",
+          en: { name: "Salmon Wave", desc: "Grilled salmon fillet, rich Alfredo or fresh pesto sauce, season vegetables, fries" },
+          ar: { name: "موجة السلمون", desc: "فيليه سلمون مشوي على اللهب، خيارك من صلصة ألفريدو أو بيستو، خضار وبطاطا" }
+        }
+      ],
+      pasta: [
+        {
+          price: "$20.00",
+          img: "",
+          en: { name: "Pasta al Salmone Alfredo", desc: "Tagliatelle pasta, rich smoked salmon slices, mushrooms, fresh basil, parmigiano" },
+          ar: { name: "باستا السلمون ألفريدو", desc: "معكرونة تاغلياتيلي مع السلمون المدخن الفاخر، الفطر والريحان الطازج بالبارميزان" }
+        },
+        {
+          price: "$18.00",
+          img: "",
+          en: { name: "Rigatoni Pesto", desc: "Homemade fresh pesto sauce, shrimps, crunchy pine nuts, aged parmigiano" },
+          ar: { name: "ريغاتوني بيستو", desc: "صلصة بيستو منزلية طازجة، حبات روبيان، صنوبر محمص وجبنة بارميزان معتقة" }
+        },
+        {
+          price: "$18.00",
+          img: "",
+          en: { name: "Linguine Shrimp Bisque", desc: "Creamy marinara bisque reduction, shrimps, roasted garlic, basil, parmigiano" },
+          ar: { name: "لينغويني بمرق الروبيان", desc: "باستا لينغويني بصلصة المارينارا الغنية ومرق الروبيان، الثوم المحمص، ريحان وبارميزان" }
+        },
+        {
+          price: "$15.00",
+          img: "https://rest.thrubits.com/uploads/restorants/c17dec3d-8e4d-49d6-9096-44033492d1a0_medium.jpg",
+          en: { name: "Penne Arabiata", desc: "Tender shrimps, cherry tomato, spicy marinara, chili flakes, parmigiano" },
+          ar: { name: "بيني أرابياتا بالروبيان", desc: "روبيان، طماطم كرزية، صلصة مارينارا حارة، رقائق الفلفل الحار وجبنة بارميزان" }
+        },
+        {
+          price: "$22.00",
+          img: "https://rest.thrubits.com/uploads/restorants/64445aaf-128d-49df-ab77-8d364c7b34d9_medium.jpg",
+          en: { name: "Seafood Spaghetti", desc: "Spaghetti loaded with fresh local mixed seafood in a rich culinary sauce" },
+          ar: { name: "سباغيتي ثمار البحر", desc: "معكرونة سباغيتي محملة بتشكيلة غنية من ثمار البحر المحلية الطازجة بالصلصة الفاخرة" }
+        }
+      ],
+      mexican: [
+        {
+          price: "$12.00",
+          img: "https://rest.thrubits.com/uploads/restorants/4163b454-1f74-4f0c-9658-10bf203004e2_medium.jpg",
+          en: { name: "Shrimp Tacos", desc: "Crispy shrimps, fresh guacamole, salsa, sour cream, cheddar cheese, hard/soft tortilla" },
+          ar: { name: "تاكو الروبيان", desc: "روبيان مقرمش، غواكامولي طازج، صلصة، كريمة حامضة وجبن شيدر بخبز تورتيلا" }
+        },
+        {
+          price: "$15.00",
+          img: "https://rest.thrubits.com/uploads/restorants/c514a4e5-f8df-4997-8baa-a81bd57c15bd_medium.jpg",
+          en: { name: "Fish Tacos", desc: "Crispy premium fish, guacamole, house salsa, sour cream, cheddar, hard/soft tortilla" },
+          ar: { name: "تاكو السمك المقرمش", desc: "فيليه سمك مقرمش، غواكامولي طازج، صلصة منزلية، كريمة حامضة وجبن شيدر" }
+        },
+        {
+          price: "$23.00",
+          img: "https://rest.thrubits.com/uploads/restorants/560f7460-aa59-4898-b89f-4d722facefd0_medium.jpg",
+          en: { name: "Shrimp Nachos", desc: "Crunchy tortilla chips loaded with shrimps and melted artisan cheeses" },
+          ar: { name: "ناشوز بالروبيان", desc: "رقائق تورتيلا مقرمشة مغطاة بالروبيان المشوي والأجبان المذابة الفاخرة" }
+        }
+      ],
+      set: [
+        {
+          price: "$100.00",
+          signature: true,
+          img: "https://rest.thrubits.com/uploads/restorants/e5fcff34-0224-477f-8e04-0607b60f1076_medium.jpg",
+          en: { name: "Formula for 4", desc: "Our ultimate signature feast for groups ($25 per person) — ask your waiter for details" },
+          ar: { name: "صيغة المجموعات لـ ٤ أشخاص", desc: "وليمتنا الفاخرة المبتكرة للمجموعات (٢٥$ للشخص) - اسأل النادل عن تفاصيل الأطباق الحالية" }
+        }
+      ],
+      drinks: [
+        {
+          price: "$1.50",
+          img: "",
+          en: { name: "Water Small", desc: "Pure mineral bottled water" },
+          ar: { name: "مياه معدنية صغيرة", desc: "مياه معدنية طبيعية نقية معبأة زجاجياً" }
+        },
+        {
+          price: "$3.00",
+          img: "",
+          en: { name: "Water Large", desc: "Large pure mineral bottled water" },
+          ar: { name: "مياه معدنية كبيرة", desc: "مياه معدنية طبيعية نقية معبأة زجاجياً بحجم عائلي" }
+        },
+        {
+          price: "$2.50",
+          img: "",
+          en: { name: "Soft Drinks", desc: "Selection of cold sodas" },
+          ar: { name: "مشروبات غازية", desc: "خيارات متنوعة من المشروبات الباردة المنعشة" }
+        },
+        {
+          price: "$3.00",
+          img: "",
+          en: { name: "Non-Alcoholic Beer", desc: "Premium malt beverage" },
+          ar: { name: "بيرة خالية من الكحول", desc: "مشروب شعير طبيعي فاخر خالي من الكحول بالكامل" }
+        },
+        {
+          price: "$3.50",
+          img: "",
+          en: { name: "Mexican Beer", desc: "Imported premium cold beer" },
+          ar: { name: "بيرة مكسيكية", desc: "بيرة مستوردة فاخرة ومنعشة تقدم باردة مع الليمون" }
+        },
+        {
+          price: "$3.00",
+          img: "",
+          en: { name: "Ice Tea", desc: "Refreshing infused tea served on ice" },
+          ar: { name: "شاي مثلج", desc: "شاي منعش مخمر طبيعياً يقدم مع قطع الثلج والليمون" }
+        },
+        {
+          price: "$4.50",
+          img: "",
+          en: { name: "Sparkling Water", desc: "Carbonated clean spring water" },
+          ar: { name: "مياه فوارة", desc: "مياه ينابيع طبيعية فوارة ومنعشة تقدم مع شريحة ليمون" }
+        }
+      ],
+      shisha: [
+        {
+          price: "$7.50",
+          img: "",
+          en: { name: "Maassal Shisha", desc: "Premium molasses flavored blends" },
+          ar: { name: "أركيلة معسل", desc: "أجود أنواع المعسل المنكه بالخلطات الفاخرة حسب ذوقك" }
+        },
+        {
+          price: "$10.00",
+          img: "",
+          en: { name: "Ajami Shisha", desc: "Traditional dark raw tobacco shisha" },
+          ar: { name: "أركيلة عجمي", desc: "التبغ العجمي العتيق التقليدي المحضر على أصوله للمتذوقين" }
+        },
+        {
+          price: "$8.00",
+          img: "",
+          en: { name: "Nakha Shisha", desc: "Special house recipe double apple / mint blends" },
+          ar: { name: "أركيلة نكهة خاصة", desc: "خلطة تفاحتين أو نعناع خاصة ومبتكرة تميزنا بالروائح الزكية" }
+        },
+        {
+          price: "$3.00",
+          img: "",
+          en: { name: "Recharge Coal", desc: "Fresh quick-light coconut coal head change" },
+          ar: { name: "تبديل رأس فحم", desc: "تغيير رأس الفحم وتنشيط الأركيلة بفحم جوز الهند الطبيعي" }
+        }
+      ]
+    };
+
+    // ------------------------------------------------
+    // D. REVIEWS DATA
+    // ------------------------------------------------
+    const REVIEWS_DATA = [
+      {
+        author: "Lynn Shehab",
+        stars: 5,
+        en: "A true hidden gem for all seafood lovers... outstanding customer service.",
+        ar: "جوهرة خفية حقيقية لكل عشاق المأكولات البحرية... خدمة عملاء استثنائية تفوق الوصف."
+      },
+      {
+        author: "Omar Dakdouk",
+        stars: 5,
+        en: "WOW it was the best seafood I've had in Lebanon, great owners...",
+        ar: "واو! لقد كان أفضل طبق ثمار بحر تناولته في لبنان على الإطلاق، وأصحاب المطعم غاية في الرقي..."
+      },
+      {
+        author: "Melanie Petersen",
+        stars: 5,
+        en: "Try the Sardine Harra and the Jumbo Shrimps. Both sauces were incredible...",
+        ar: "أنصحكم بشدة بتجربة السردين الحار والروبيان الجامبو. كلتا الصلصتين كانتا مذهلتين ونضارتهما لا توصف..."
+      },
+      {
+        author: "Rima Abi Saab",
+        stars: 5,
+        en: "The food is as fresh as it gets... ambiance is super homey...",
+        ar: "الطعام طازج ونقي لأقصى درجة ممكنة... وأجواء المطعم دافئة وحميمية تذكرك بالبيت والتقاليد الأصيلة..."
+      },
+      {
+        author: "Kenwah Dabaja",
+        stars: 5,
+        en: "Selection of fresh fish is based on what gets caught... Try the shrimp fetteh.",
+        ar: "اختيار الأسماك الطازجة مبني بالكامل على ما يتم صيده كل صباح... جربوا فتة الروبيان المبتكرة بالزبدة."
+      }
+    ];
+
+    // ------------------------------------------------
+    // E. STATE ENGINE
+    // ------------------------------------------------
+    let currentLang = localStorage.getItem("shabkeLang") || "en";
+    let activeCategory = "salads";
+    let currentReviewIndex = 0;
+    
+    // Lightbox State List
+    const galleryItems = document.querySelectorAll(".gallery-item");
+    let galleryList = [];
+    galleryItems.forEach((el, index) => {
+      galleryList.push({
+        img: el.getAttribute("data-img"),
+        caption: el.getAttribute("data-caption")
+      });
+      el.addEventListener("click", () => openLightbox(index));
+    });
+    let activeLightboxIndex = 0;
+
+    // ------------------------------------------------
+    // F. DOM ELEMENTS
+    // ------------------------------------------------
+    const htmlEl = document.documentElement;
+    const bodyEl = document.body;
+    const langToggle = document.getElementById("langToggle");
+    const langToggleMob = document.getElementById("langToggleMob");
+    const menuGrid = document.getElementById("menuGrid");
+    const menuTabs = document.getElementById("menuTabs");
+    const reviewsContainer = document.getElementById("reviewsContainer");
+    const carouselDots = document.getElementById("carouselDots");
+    const prevReviewBtn = document.getElementById("prevReview");
+    const nextReviewBtn = document.getElementById("nextReview");
+    
+    // Mobile Navigation Drawer
+    const mobDrawer = document.getElementById("mobDrawer");
+    const mobMenuOpen = document.getElementById("mobMenuOpen");
+    const mobMenuClose = document.getElementById("mobMenuClose");
+    const mobLinks = document.querySelectorAll(".mob-link");
+
+    // Form
+    const resForm = document.getElementById("resForm");
+    const successModal = document.getElementById("successModal");
+    const successClose = document.getElementById("successClose");
+
+    // Lightbox Elements
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxCaption = document.getElementById("lightboxCaption");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxPrev = document.getElementById("lightboxPrev");
+    const lightboxNext = document.getElementById("lightboxNext");
+
+    // ------------------------------------------------
+    // G. INITIALIZATION AND RENDERING FUNCTIONS
+    // ------------------------------------------------
+    
+    // Toggle language and update page
+    function applyLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem("shabkeLang", lang);
+      
+      // Update HTML Attributes
+      htmlEl.setAttribute("lang", lang);
+      if (lang === "ar") {
+        htmlEl.setAttribute("dir", "rtl");
+        bodyEl.classList.add("font-arabic");
+        langToggle.innerText = "EN";
+        langToggleMob.innerText = "EN";
+      } else {
+        htmlEl.setAttribute("dir", "ltr");
+        bodyEl.classList.remove("font-arabic");
+        langToggle.innerText = "AR";
+        langToggleMob.innerText = "AR";
+      }
+
+      // 1. Translate all Static DOM items marked with data-translate
+      const translatableEls = document.querySelectorAll("[data-translate]");
+      translatableEls.forEach(el => {
+        const key = el.getAttribute("data-translate");
+        if (LANG_DATA[lang][key]) {
+          // If it is an input placeholder
+          if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+            el.setAttribute("placeholder", LANG_DATA[lang][key]);
+          } else {
+            el.innerText = LANG_DATA[lang][key];
+          }
+        }
+      });
+
+      // Special translations for inputs which have custom sibling labels
+      const addressDesc = document.querySelector("[data-translate='address_desc']");
+      if (addressDesc) addressDesc.innerText = LANG_DATA[lang].address_desc;
+
+      // 2. Re-render Menu Categories Tabs and Active Cards
+      renderMenuTabs();
+      renderMenuItems();
+
+      // 3. Re-render Reviews with Active Translation
+      renderReviews();
+    }
+
+    // Dynamic Render of Menu Categories
+    function renderMenuTabs() {
+      menuTabs.innerHTML = "";
+      const categories = Object.keys(MENU_DATA);
+      categories.forEach(cat => {
+        const key = `category_${cat}`;
+        const label = LANG_DATA[currentLang][key] || cat;
+        
+        const activeClasses = "text-amberGold border-b-2 border-amberGold";
+        const inactiveClasses = "text-slate-400 hover:text-white border-b-2 border-transparent";
+        
+        const tabBtn = document.createElement("button");
+        tabBtn.className = `pb-2 px-1 transition-all duration-300 ${cat === activeCategory ? activeClasses : inactiveClasses}`;
+        tabBtn.innerText = label;
+        
+        tabBtn.addEventListener("click", () => {
+          activeCategory = cat;
+          renderMenuTabs();
+          renderMenuItems();
+        });
+        menuTabs.appendChild(tabBtn);
+      });
+    }
+
+    // Dynamic Render of Menu Cards
+    function renderMenuItems() {
+      menuGrid.innerHTML = "";
+      const items = MENU_DATA[activeCategory];
+      
+      items.forEach((item, index) => {
+        const details = item[currentLang];
+        const card = document.createElement("div");
+        card.className = "group glass-panel glass-panel-hover p-4 lg:p-5 rounded-sm flex flex-col justify-between transition-all duration-700 transform hover:scale-[1.02] opacity-0 translate-y-8";
+        
+        // Check for Image
+        let imgBlock = "";
+        if (item.img) {
+          imgBlock = `
+            <div class="w-full aspect-[16/10] overflow-hidden mb-4 relative rounded-sm">
+              <img src="${item.img}" alt="${details.name}" class="w-full h-full object-cover filter brightness-90 saturate-75 transition-all duration-1000 group-hover:scale-110 group-hover:brightness-100 group-hover:saturate-100 group-hover:contrast-100 select-none">
+              ${item.signature ? `<span class="absolute top-3 left-3 bg-[#0A0F16]/80 text-amberGold text-[9px] font-bold px-2.5 py-1 uppercase tracking-widest border border-amberGold/30 rounded-sm">★ Signature</span>` : ""}
+            </div>
+          `;
+        } else {
+          // Sunset Onyx Gradient Placeholder for items with no image
+          imgBlock = `
+            <div class="w-full aspect-[16/10] bg-gradient-to-br from-[#0A0F16] via-[#121924] to-[#0A0F16] flex flex-col items-center justify-center p-6 border border-white/5 mb-4 rounded-sm relative overflow-hidden group-hover:border-amberGold/15">
+              <div class="absolute inset-0 bg-[radial-gradient(circle,rgba(232,168,76,0.03)_0%,transparent_80%)]"></div>
+              <span class="font-serif-elegant text-slate-600 text-3xl group-hover:text-amberGold/20 transition-colors duration-700">★</span>
+              ${item.signature ? `<span class="absolute top-3 left-3 bg-[#0A0F16]/80 text-amberGold text-[9px] font-bold px-2.5 py-1 uppercase tracking-widest border border-amberGold/30 rounded-sm">★ Signature</span>` : ""}
+            </div>
+          `;
+        }
+
+        card.innerHTML = `
+          <div>
+            ${imgBlock}
+            <div class="flex items-start justify-between space-x-4 mb-2">
+              <h4 class="font-serif-elegant text-white text-lg font-medium group-hover:text-amberGold transition-colors duration-500">${details.name}</h4>
+              <span class="text-amberGold font-semibold tracking-wider font-serif-elegant">${item.price}</span>
+            </div>
+            <p class="text-slate-400 font-light text-xs leading-relaxed mt-2 tracking-wide">${details.desc}</p>
+          </div>
+        `;
+        
+        menuGrid.appendChild(card);
+
+        // Delayed Animation Reveal Trigger
+        gsap.to(card, {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          delay: index * 0.08,
+          ease: "power2.out"
+        });
+      });
+    }
+
+    // Dynamic Render of Reviews inside sliding block
+    function renderReviews() {
+      reviewsContainer.innerHTML = "";
+      carouselDots.innerHTML = "";
+      
+      REVIEWS_DATA.forEach((rev, idx) => {
+        // Build card structure
+        const slide = document.createElement("div");
+        slide.className = "min-w-full flex-shrink-0 flex flex-col items-center justify-center text-center px-6 md:px-12 select-none h-full";
+        
+        // Stars block
+        let starsStr = "";
+        for (let i = 0; i < rev.stars; i++) {
+          starsStr += "★";
+        }
+
+        slide.innerHTML = `
+          <span class="text-amberGold text-xl tracking-[0.2em] mb-4">${starsStr}</span>
+          <blockquote class="font-serif-elegant text-lg md:text-xl lg:text-2xl text-white italic max-w-3xl leading-relaxed font-light mb-6">
+            "${rev[currentLang]}"
+          </blockquote>
+          <cite class="text-xs uppercase tracking-[0.25em] text-slate-400 font-semibold font-sans not-italic block">
+            — ${rev.author}
+          </cite>
+        `;
+        reviewsContainer.appendChild(slide);
+
+        // Generate dot indicator
+        const dot = document.createElement("button");
+        dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${idx === currentReviewIndex ? "bg-amberGold w-5" : "bg-white/20 hover:bg-white/50"}`;
+        dot.addEventListener("click", () => {
+          gotoReview(idx);
+        });
+        carouselDots.appendChild(dot);
+      });
+
+      updateReviewPosition();
+    }
+
+    function updateReviewPosition() {
+      const transformValue = currentLang === "ar" 
+        ? `translateX(${currentReviewIndex * 100}%)` 
+        : `translateX(-${currentReviewIndex * 100}%)`;
+      reviewsContainer.style.transform = transformValue;
+    }
+
+    function gotoReview(idx) {
+      currentReviewIndex = idx;
+      
+      // Update Dots
+      const dots = carouselDots.querySelectorAll("button");
+      dots.forEach((dot, dIdx) => {
+        if (dIdx === currentReviewIndex) {
+          dot.classList.add("bg-amberGold", "w-5");
+          dot.classList.remove("bg-white/20");
+        } else {
+          dot.classList.remove("bg-amberGold", "w-5");
+          dot.classList.add("bg-white/20");
+        }
+      });
+
+      updateReviewPosition();
+    }
+
+    // ------------------------------------------------
+    // H. INTERACTIVE EVENTS ENGINE
+    // ------------------------------------------------
+    
+    // Menu Category Toggle listeners
+    langToggle.addEventListener("click", () => {
+      applyLanguage(currentLang === "en" ? "ar" : "en");
+    });
+    langToggleMob.addEventListener("click", () => {
+      applyLanguage(currentLang === "en" ? "ar" : "en");
+      closeDrawer();
+    });
+
+    // Mobile Hamburger
+    function openDrawer() {
+      mobDrawer.classList.remove("translate-x-full");
+      if (currentLang === "ar") {
+        mobDrawer.classList.remove("-translate-x-full");
+      }
+    }
+    function closeDrawer() {
+      mobDrawer.classList.add("translate-x-full");
+    }
+    mobMenuOpen.addEventListener("click", openDrawer);
+    mobMenuClose.addEventListener("click", closeDrawer);
+    mobLinks.forEach(link => link.addEventListener("click", closeDrawer));
+
+    // Reviews Navigation click events
+    prevReviewBtn.addEventListener("click", () => {
+      let prevIdx = currentReviewIndex - 1;
+      if (prevIdx < 0) prevIdx = REVIEWS_DATA.length - 1;
+      gotoReview(prevIdx);
+    });
+    nextReviewBtn.addEventListener("click", () => {
+      let nextIdx = currentReviewIndex + 1;
+      if (nextIdx >= REVIEWS_DATA.length) nextIdx = 0;
+      gotoReview(nextIdx);
+    });
+
+    // Lightbox Functions
+    function openLightbox(index) {
+      activeLightboxIndex = index;
+      const data = galleryList[index];
+      lightboxImage.src = data.img;
+      lightboxCaption.innerText = data.caption;
+      
+      lightbox.classList.remove("hidden");
+      lightbox.classList.add("flex");
+      bodyEl.classList.add("overflow-hidden");
+      
+      gsap.fromTo("#lightboxImage", {scale: 0.9, opacity: 0}, {scale: 1, opacity: 1, duration: 0.5, ease: "power2.out"});
+    }
+
+    function closeLightbox() {
+      lightbox.classList.add("hidden");
+      lightbox.classList.remove("flex");
+      bodyEl.classList.remove("overflow-hidden");
+      lightboxImage.src = "";
+    }
+
+    function nextLightbox() {
+      let nextIdx = activeLightboxIndex + 1;
+      if (nextIdx >= galleryList.length) nextIdx = 0;
+      openLightbox(nextIdx);
+    }
+
+    function prevLightbox() {
+      let prevIdx = activeLightboxIndex - 1;
+      if (prevIdx < 0) prevIdx = galleryList.length - 1;
+      openLightbox(prevIdx);
+    }
+
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightboxNext.addEventListener("click", nextLightbox);
+    lightboxPrev.addEventListener("click", prevLightbox);
+    
+    // Close lightbox on click outside the image
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    // Keyboard support for Lightbox
+    window.addEventListener("keydown", (e) => {
+      if (!lightbox.classList.contains("hidden")) {
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowRight") currentLang === "ar" ? prevLightbox() : nextLightbox();
+        if (e.key === "ArrowLeft") currentLang === "ar" ? nextLightbox() : prevLightbox();
+      }
+    });
+
+    // Reservation Form & WhatsApp Integration
+    resForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      
+      const nameVal = document.getElementById("formName").value;
+      const phoneVal = document.getElementById("formPhone").value;
+      const dateVal = document.getElementById("formDate").value;
+      const timeVal = document.getElementById("formTime").value;
+      const guestsVal = document.getElementById("formGuests").value;
+
+      // Construct elegant custom WhatsApp booking message template
+      const templateMsg = currentLang === "ar" 
+        ? `*طلب حجز جديد - شبكة وصنارة* \n\n• *الاسم:* ${nameVal}\n• *الهاتف:* ${phoneVal}\n• *التاريخ:* ${dateVal}\n• *الوقت:* ${timeVal}\n• *عدد الضيوف:* ${guestsVal} أشخاص\n\n_يرجى تأكيد توفر الحجز لدينا وشكراً._`
+        : `*New Reservation Request - Shabke w Sinnara* \n\n• *Name:* ${nameVal}\n• *Phone:* ${phoneVal}\n• *Date:* ${dateVal}\n• *Time:* ${timeVal}\n• *Guests:* ${guestsVal} people\n\n_Please confirm availability. Thank you!_`;
+
+      const whatsappUrl = `${CONFIG.whatsappBase}?text=${encodeURIComponent(templateMsg)}`;
+
+      // Show Custom Animated Success Modal
+      successModal.classList.remove("hidden");
+      successModal.classList.add("flex");
+      bodyEl.classList.add("overflow-hidden");
+
+      // Auto redirect after short delay
+      setTimeout(() => {
+        window.open(whatsappUrl, "_blank");
+      }, 1500);
+    });
+
+    successClose.addEventListener("click", () => {
+      successModal.classList.add("hidden");
+      successModal.classList.remove("flex");
+      bodyEl.classList.remove("overflow-hidden");
+      resForm.reset();
+    });
+
+    // ------------------------------------------------
+    // I. GSAP ENTRANCES & MICRO-ANIMATIONS
+    // ------------------------------------------------
+    window.addEventListener("DOMContentLoaded", () => {
+      applyLanguage(currentLang);
+      
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Hero Elements Anim
+      const heroTl = gsap.timeline();
+      heroTl.to("#heroBgImage", {scale: 1, duration: 8, ease: "power2.out"})
+            .to("#heroTitleEn", {opacity: 1, y: 0, duration: 1.2, ease: "power3.out"}, "-=7")
+            .to("#heroTitleAr", {opacity: 1, y: 0, duration: 1.2, ease: "power3.out"}, "-=6.2")
+            .to("#heroTagline", {opacity: 1, y: 0, duration: 1.2, ease: "power3.out"}, "-=5.4")
+            .to("#scrollIndicator", {opacity: 1, duration: 1}, "-=4.2");
+
+      // Scroll Fade Ups
+      gsap.utils.toArray('.animate-fade-up').forEach((el) => {
+        gsap.fromTo(el, 
+          { opacity: 0, y: 40 },
+          { 
+            opacity: 1, 
+            y: 0, 
+            duration: 1.2, 
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 88%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      });
+
+      // About Side Image Parallax
+      gsap.fromTo('.parallax-img',
+        { y: -40 },
+        {
+          y: 40,
+          ease: "none",
+          scrollTrigger: {
+            trigger: '.parallax-container',
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true
+          }
+        }
+      );
+
+      // Navbar Glass color shift on scroll
+      ScrollTrigger.create({
+        start: "top -50px",
+        onEnter: () => {
+          document.getElementById("navbar").classList.remove("py-5");
+          document.getElementById("navbar").classList.add("py-3.5", "bg-[#05080C]/90");
+        },
+        onLeaveBack: () => {
+          document.getElementById("navbar").classList.remove("py-3.5", "bg-[#05080C]/90");
+          document.getElementById("navbar").classList.add("py-5");
+        }
+      });
+    });
+
+  </script>
+</body>
+</html>
