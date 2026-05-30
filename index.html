@@ -530,7 +530,7 @@
         
         <!-- Reviews Grid / Flex Box -->
         <div class="overflow-hidden relative w-full h-[320px] sm:h-[260px] md:h-[220px]">
-          <div class="flex transition-transform duration-750 ease-in-out h-full" id="reviewsContainer">
+          <div class="relative w-full h-full" id="reviewsContainer">
             <!-- Dynamically populated reviews via JS -->
           </div>
         </div>
@@ -1522,7 +1522,7 @@
       REVIEWS_DATA.forEach((rev, idx) => {
         // Build card structure
         const slide = document.createElement("div");
-        slide.className = "min-w-full flex-shrink-0 flex flex-col items-center justify-center text-center px-6 md:px-12 select-none h-full transition-opacity duration-500 ease-in-out";
+        slide.className = "absolute inset-0 w-full h-full flex flex-col items-center justify-center text-center px-6 md:px-12 select-none transition-all duration-700 ease-in-out";
         
         // Stars block
         let starsStr = "";
@@ -1554,20 +1554,27 @@
     }
 
     function updateReviewPosition() {
-      const transformValue = currentLang === "ar" 
-        ? `translateX(${currentReviewIndex * 100}%)` 
-        : `translateX(-${currentReviewIndex * 100}%)`;
-      reviewsContainer.style.transform = transformValue;
-
-      // Ensure adjacent slides are completely invisible to fix iOS Safari webkit mask clipping bug
       const slides = reviewsContainer.children;
+      const isRtl = currentLang === "ar";
+      
       for (let i = 0; i < slides.length; i++) {
         if (i === currentReviewIndex) {
+          // Active slide
           slides[i].style.opacity = "1";
           slides[i].style.pointerEvents = "auto";
-        } else {
+          slides[i].style.transform = "translateX(0)";
+        } else if (i < currentReviewIndex) {
+          // Slide is on the left
+          const shift = isRtl ? "100%" : "-100%";
           slides[i].style.opacity = "0";
           slides[i].style.pointerEvents = "none";
+          slides[i].style.transform = `translateX(${shift})`;
+        } else {
+          // Slide is on the right
+          const shift = isRtl ? "-100%" : "100%";
+          slides[i].style.opacity = "0";
+          slides[i].style.pointerEvents = "none";
+          slides[i].style.transform = `translateX(${shift})`;
         }
       }
     }
