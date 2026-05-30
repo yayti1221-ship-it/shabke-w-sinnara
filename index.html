@@ -1522,7 +1522,7 @@
       REVIEWS_DATA.forEach((rev, idx) => {
         // Build card structure
         const slide = document.createElement("div");
-        slide.className = "min-w-full flex-shrink-0 flex flex-col items-center justify-center text-center px-6 md:px-12 select-none h-full";
+        slide.className = "min-w-full flex-shrink-0 flex flex-col items-center justify-center text-center px-6 md:px-12 select-none h-full transition-opacity duration-500 ease-in-out";
         
         // Stars block
         let starsStr = "";
@@ -1554,12 +1554,22 @@
     }
 
     function updateReviewPosition() {
-      const totalReviews = REVIEWS_DATA.length;
-      const percentage = (currentReviewIndex * 100) / totalReviews;
       const transformValue = currentLang === "ar" 
-        ? `translateX(${percentage}%)` 
-        : `translateX(-${percentage}%)`;
+        ? `translateX(${currentReviewIndex * 100}%)` 
+        : `translateX(-${currentReviewIndex * 100}%)`;
       reviewsContainer.style.transform = transformValue;
+
+      // Ensure adjacent slides are completely invisible to fix iOS Safari webkit mask clipping bug
+      const slides = reviewsContainer.children;
+      for (let i = 0; i < slides.length; i++) {
+        if (i === currentReviewIndex) {
+          slides[i].style.opacity = "1";
+          slides[i].style.pointerEvents = "auto";
+        } else {
+          slides[i].style.opacity = "0";
+          slides[i].style.pointerEvents = "none";
+        }
+      }
     }
 
     function gotoReview(idx) {
