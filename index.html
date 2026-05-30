@@ -226,19 +226,13 @@
     
     <!-- Background Video & Fallback Image with Moody Dark Overlay -->
     <div class="absolute inset-0 z-0">
-      <!-- Fallback Image for mobile low-power or slow connections -->
-      <img src="https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?q=80&w=2000" 
-           alt="Premium Moody Fresh Seafood" 
-           class="absolute inset-0 w-full h-full object-cover filter brightness-50 contrast-125 saturate-50 select-none transition-opacity duration-1000"
-           id="heroBgImage">
-      
       <!-- High-End Cinematic Background Video Loop -->
       <video autoplay loop muted playsinline 
              poster="https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?q=80&w=2000"
-             class="absolute inset-0 w-full h-full object-cover filter brightness-[0.35] contrast-125 saturate-50 select-none opacity-0 transition-opacity duration-1000" 
-             id="heroVideo"
-             onplay="this.classList.remove('opacity-0'); document.getElementById('heroBgImage').classList.add('opacity-0');">
+             class="absolute inset-0 w-full h-full object-cover filter brightness-[0.35] contrast-125 saturate-50 select-none z-0 scale-105" 
+             id="heroVideo">
         <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27dbcca698503d5cf239d6b5e02888147d3e911&profile_id=165&oauth2_token_id=57447761" type="video/mp4">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-surface-of-the-sea-in-slow-motion-43026-large.mp4" type="video/mp4">
       </video>
       
       <div class="absolute inset-0 bg-gradient-to-t from-[#05080C] via-[#05080C]/70 to-[#05080C]/40"></div>
@@ -1743,7 +1737,7 @@
 
       // Hero Elements Anim
       const heroTl = gsap.timeline();
-      heroTl.to("#heroBgImage", {scale: 1, duration: 8, ease: "power2.out"})
+      heroTl.to("#heroVideo", {scale: 1, duration: 8, ease: "power2.out"})
             .to("#heroTitleEn", {opacity: 1, y: 0, duration: 1.2, ease: "power3.out"}, "-=7")
             .to("#heroTitleAr", {opacity: 1, y: 0, duration: 1.2, ease: "power3.out"}, "-=6.2")
             .to("#heroTagline", {opacity: 1, y: 0, duration: 1.2, ease: "power3.out"}, "-=5.4");
